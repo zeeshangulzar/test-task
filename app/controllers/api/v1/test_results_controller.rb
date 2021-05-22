@@ -4,6 +4,8 @@ module Api
       protect_from_forgery with: :null_session
 
       def create
+        response = ApiResponse.create(response: params, center: params[:data][:testing_center])
+        ParseTestCenterDataJob.set(wait: 5.seconds).perform_later(response.response)
         render json: { message: 'OK' }
       end
     end

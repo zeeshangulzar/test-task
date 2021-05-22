@@ -1,3 +1,3 @@
 TestingCenter.create(name: 'Pfizer')
-TestingCenter.create(name: 'AstraZeneca')
-TestingCenter.create(name: 'Herbalife')
+TestingCenter.create(name: 'astra_zeneca')
+TestingCenter.create(name: 'herbalife')
