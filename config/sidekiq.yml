@@ -1,4 +1,4 @@
 :schedule:
-  hello_world:
-    cron: '30 * * * * *'   # Runs once per minute
+  generate_pdf_job:
+    cron: '0 0 * * * *'
     class: GeneratePdfJob
