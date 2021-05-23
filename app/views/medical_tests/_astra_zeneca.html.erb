@@ -1,0 +1,19 @@
+<div style='width: 400px'>
+  <div style='height:30px'>
+    <span style='float:left'><%= @user.complete_name %>(<%= @user.email %>)</span>
+    <span style='float:right'><%= testing_center&.name&.titleize + ' ' %></span>
+  </div>
+  <div>
+    <% tests.each_with_index do |test, index| %>
+      <span style="<%= index%2!=0 ? 'float:right' : 'float:left' %>;margin-bottom:30px">
+        <div>Medical Test #<%= index + 1 %></div>
+        <div>DateTime: <%= test.tested_at.to_date %></div>
+        <div>Result: <%= test.result %></div>
+        <div>Test Type: <%= test.test_type&.titleize %></div>
+      </span>
+    <% end %>
+  </div>
+</div>
+<div style='clear:both;float:none'></div>
+<hr>
+<br>
