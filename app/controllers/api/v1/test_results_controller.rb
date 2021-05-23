@@ -2,6 +2,8 @@ module Api
   module V1
     class TestResultsController < ApplicationController
       protect_from_forgery with: :null_session
+      before_action :http_basic_authenticate
+
 
       def create
         response = ApiResponse.create(response: params, center: params[:data][:testing_center])
