@@ -1,4 +1,4 @@
 <% @user.medical_tests.group_by(&:testing_center_id).each do |testing_center_id, tests| %>
   <% testing_center = TestingCenter.find testing_center_id  %>
-  <%= render "medical_tests/#{testing_center.downcase_name}", tests: tests, testing_center: testing_center %>
+  <%= render "medical_tests/#{testing_center.downcase_name}", tests: tests.sort_by(&:tested_at).reverse, testing_center: testing_center %>
 <% end %>
